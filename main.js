@@ -29,13 +29,7 @@ pointLight.position.set(5, 5, 5);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
-// Helpers
 
-// const lightHelper = new THREE.PointLightHelper(pointLight)
-// const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(lightHelper, gridHelper)
-
-// const controls = new OrbitControls(camera, renderer.domElement);
 
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
@@ -59,13 +53,13 @@ scene.background = spaceTexture;
 
 // Avatar
 
-const jeffTexture = new THREE.TextureLoader().load('baris.jpeg');
+const barisTexture = new THREE.TextureLoader().load('baris.jpeg');
 
-const jeff = new THREE.Mesh(
+const baris = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3), 
-new THREE.MeshBasicMaterial({ map: jeffTexture }));
+new THREE.MeshBasicMaterial({ map: barisTexture }));
 
-scene.add(jeff);
+scene.add(baris);
 
 // Moon
 
@@ -87,9 +81,9 @@ scene.add(moon);
 
 
 moon.position.z = 10;
-jeff.position.z = -5;
-jeff.position.x = -3;
-jeff.position.y = -0.5;
+baris.position.z = -5;
+baris.position.x = -3;
+baris.position.y = -0.5;
 
 // Scroll Animation
 
@@ -98,8 +92,6 @@ function moveCamera() {
   moon.rotation.x += 0.05;
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
-
-
   camera.position.z = t * -0.01;
   
 }
@@ -112,7 +104,7 @@ moveCamera();
 function animate() {
   requestAnimationFrame(animate);
 
-  jeff.rotation.y += 0.005;
+  baris.rotation.y += 0.005;
   moon.rotation.x += 0.005;
 
   // controls.update();
